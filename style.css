@@ -12,7 +12,19 @@
   --sans: "Montserrat", Arial, sans-serif;
   --script: "Allura", cursive;
 }
+html {
+    direction: rtl;
+}
 
+body {
+    direction: ltr;
+}
+
+main,
+header,
+footer {
+    direction: ltr;
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -24,72 +36,29 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
-html {
-    scrollbar-width: none;
-}
-/* ==============================
-   BARRA LATERAL PERSONALIZADA
-   ============================== */
 
-/* Ocultar la barra nativa */
-html {
-    scrollbar-width: none;
-}
+/* =========================
+   SCROLLBAR
+   ========================= */
 
-html::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+::-webkit-scrollbar {
+  
+    width: 25px;
+    background-color: transparent;
 }
 
-/* Contenedor de nuestra barra */
-.custom-scrollbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 55px;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-/* ==============================
-   BARRA LATERAL PERSONALIZADA
-   ============================== */
-
-html {
-    scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-    display: none;
-}
-
-.custom-scrollbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-}
-
-.custom-scrollbar-thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 70px;
-    height: 330px;
-
-    background-image: url("images/lateralbar.png");
-    background-repeat: no-repeat;
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  background-image: url(images/thumbscroll_fileteado.png);
+   background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-
-    cursor: grab;
-    pointer-events: auto;
-    user-select: none;
+    background-size: 100% auto;
+    border: none;
+    border-radius: 0;
 }
 
 .section-dark {
@@ -745,4 +714,12 @@ h1, h2, h3, p { margin-top: 0; }
   .istanbul-copy { padding: 75px 7vw; }
   .site-footer { grid-template-columns: 1fr auto; }
   .site-footer p { grid-column: 1 / -1; }
+}
+/* SCROLLBAR A LA IZQUIERDA */
+html {
+    direction: rtl;
+}
+
+body {
+    direction: ltr;
 }
