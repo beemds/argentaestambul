@@ -24,6 +24,73 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
+html {
+    scrollbar-width: none;
+}
+/* ==============================
+   BARRA LATERAL PERSONALIZADA
+   ============================== */
+
+/* Ocultar la barra nativa */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Contenedor de nuestra barra */
+.custom-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ==============================
+   BARRA LATERAL PERSONALIZADA
+   ============================== */
+
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.custom-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 70px;
+    height: 330px;
+
+    background-image: url("images/lateralbar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    cursor: grab;
+    pointer-events: auto;
+    user-select: none;
+}
 
 .section-dark {
   background:

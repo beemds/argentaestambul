@@ -14,6 +14,9 @@
 </head>
 
 <body>
+  <div class="custom-scrollbar">
+    <div class="custom-scrollbar-thumb"></div>
+</div>
   <header class="site-header" id="inicio">
     <a class="brand" href="#inicio" aria-label="Una Argenta en Estambul">
   <img src="images/logo-horizontal.png" alt="Una Argenta en Estambul">
@@ -151,5 +154,77 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+const thumb = document.querySelector('.custom-scrollbar-thumb');
+
+let dragging = false;
+let startY = 0;
+let startScroll = 0;
+
+// Actualizar la posición de la barra al hacer scroll
+function updateScrollbar() {
+    if (dragging) return;
+
+    const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const maxMove =
+        window.innerHeight - thumb.offsetHeight;
+
+    if (maxScroll <= 0 || maxMove <= 0) return;
+
+    const progress = window.scrollY / maxScroll;
+
+    thumb.style.transform =
+        `translateY(${progress * maxMove}px)`;
+}
+
+// Empezar a arrastrar
+thumb.onmousedown = (e) => {
+    dragging = true;
+    startY = e.clientY;
+    startScroll = window.scrollY;
+
+    thumb.style.cursor = 'grabbing';
+
+    e.preventDefault();
+};
+
+// Mover la barra
+document.onmousemove = (e) => {
+    if (!dragging) return;
+
+    const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const maxMove =
+        window.innerHeight - thumb.offsetHeight;
+
+    const movement = e.clientY - startY;
+
+    window.scrollTo(
+        0,
+        startScroll + movement * (maxScroll / maxMove)
+    );
+};
+
+// Soltar la barra
+document.onmouseup = () => {
+    dragging = false;
+    thumb.style.cursor = 'grab';
+};
+
+// Actualizar al hacer scroll o cambiar el tamaño de la ventana
+window.addEventListener('scroll', updateScrollbar);
+window.addEventListener('resize', updateScrollbar);
+
+updateScrollbar();
+
+window.addEventListener('scroll', updateCustomScrollbar);
+window.addEventListener('resize', updateCustomScrollbar);
+
+updateCustomScrollbar();
+</script>
 </body>
+
 </html>
