@@ -17,6 +17,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  width: 100%;
   background: var(--navy);
   color: var(--cream);
   font-family: var(--serif);
@@ -357,7 +358,7 @@ h1, h2, h3, p { margin-top: 0; }
 
 .about {
   position: relative;
-  max-width: 1440px;
+  max-width: 100%;
   margin: auto;
   padding: 130px 7vw;
   display: grid;
@@ -365,6 +366,7 @@ h1, h2, h3, p { margin-top: 0; }
   gap: 8vw;
   overflow: hidden;
 }
+
 .about-copy { max-width: 590px; }
 .about-copy > p:not(.eyebrow) {
   color: var(--cream-muted);
@@ -497,7 +499,7 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .contact {
-  max-width: 1440px;
+  max-width: 100%;
   margin: auto;
   padding: 120px 7vw 90px;
   text-align: center;
