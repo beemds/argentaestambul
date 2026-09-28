@@ -136,7 +136,6 @@ button { font: inherit; }
   display: flex;
   align-items: center;
   padding: 150px 7vw 90px;
-  margin-top: 80px;
   isolation: isolate;
   overflow: hidden;
   background:
@@ -175,7 +174,7 @@ button { font: inherit; }
   max-width: 660px;
 }
 .eyebrow {
-  margin: 0 0 22px;
+  margin: 65px 0 25px 0;
   color: var(--gold-light);
   font: 500 11px var(--sans);
   letter-spacing: .35em;
@@ -191,7 +190,7 @@ h1, h2, h3, p { margin-top: 0; }
   color: var(--cream);
   font-size: clamp(24px, 2.5vw, 34px);
   line-height: 1.15;
-  margin-bottom: 34px;
+  margin: 50px 0 35px 0;
 }
 .button {
   display: inline-flex;
