@@ -321,6 +321,61 @@ h1, h2, h3, p { margin-top: 0; }
   line-height: 1.35;
   margin-left: auto;
 }
+/* INTRO DE SERVICIOS */
+
+.services-intro {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  width: 100%;
+}
+
+.services-ornament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-ornament img {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+.services-intro .section-intro {
+  width: 80%;
+  margin: 0 auto;
+}
+.services-intro {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: center;
+  width: 100%;
+}
+
+.services-ornament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-ornament img {
+  width: 45%;
+  height: auto;
+  display: block;
+}
+
+.services-intro .section-intro {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.services-intro .section-intro p {
+  max-width: 32vw;
+  line-height: 1.7;
+  margin-top: 2vw;
+}
+
 .service-grid {
   max-width: var(--max);
   margin: auto;
