@@ -646,6 +646,17 @@ h1, h2, h3, p { margin-top: 0; }
 html {
     scroll-behavior: smooth;
 }
+/* ORNAMENTO DE SECCIÓN */
+
+.section-ornament {
+  display: block;
+  width: 28vw;
+  max-width: 360px;
+  min-width: 180px;
+  height: auto;
+  margin: 0 auto 3vw auto;
+  object-fit: contain;
+}
 
 @media (max-width: 900px) {
   .site-header { padding: 15px 5vw; }
