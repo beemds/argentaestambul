@@ -311,9 +311,14 @@ h1, h2, h3, p { margin-top: 0; }
   letter-spacing: -.02em;
   text-transform: uppercase;
 }
+
 .section-intro h2 em,
 .about h2 em,
-.istanbul h2 em { color: var(--gold-light); font-style: italic; }
+.istanbul h2 em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
 .section-intro > p:last-child {
   max-width: 440px;
   color: var(--cream-muted);
@@ -321,31 +326,10 @@ h1, h2, h3, p { margin-top: 0; }
   line-height: 1.35;
   margin-left: auto;
 }
+
+
 /* INTRO DE SERVICIOS */
 
-.services-intro {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  align-items: center;
-  width: 100%;
-}
-
-.services-ornament {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.services-ornament img {
-  width: 70%;
-  height: auto;
-  display: block;
-}
-
-.services-intro .section-intro {
-  width: 80%;
-  margin: 0 auto;
-}
 .services-intro {
   display: grid;
   grid-template-columns: 35% 65%;
@@ -370,12 +354,19 @@ h1, h2, h3, p { margin-top: 0; }
   margin: 0 auto;
 }
 
-.services-intro .section-intro p {
-  max-width: 32vw;
-  line-height: 1.7;
-  margin-top: 2vw;
+.services-intro .section-intro h2 {
+  font-size: 5vw;
+  line-height: .95;
+  margin: 0 0 2vw 0;
 }
 
+.services-intro .section-intro p {
+  max-width: 32vw;
+  color: var(--cream-muted);
+  font-size: 1.35vw;
+  line-height: 1.7;
+  margin: 0;
+}
 .service-grid {
   max-width: var(--max);
   margin: auto;
