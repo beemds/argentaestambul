@@ -520,305 +520,262 @@ h1, h2, h3, p { margin-top: 0; }
   padding: 90px 7vw 70px;
   overflow: hidden;
 }
+/* =========================================================
+   CONTACTO · CONTENEDOR
+   ========================================================= */
 
-
-/* =========================================
-   GRID PRINCIPAL
-   ========================================= */
+.contact-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 
 .contact-grid {
-  width: min(1250px, 100%);
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1.15fr 0.35fr 1fr;
-
-  align-items: center;
-
-  column-gap: 45px;
-
-  min-height: 470px;
+    width: min(1250px, 100%);
+    min-height: 470px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    box-sizing: border-box;
 }
 
 
-/* =========================================
-   COLUMNA 1
-   ========================================= */
+/* =========================================================
+   COLUMNA IZQUIERDA
+   ========================================================= */
 
 .contact-main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 
-/* Ornamento superior */
+/* Ornamento sobre el título */
 
 .contact-title-ornament {
-  width: 290px;
-  height: auto;
-
-  margin-bottom: 12px;
-
-  display: block;
+    width: 290px;
+    height: auto;
+    margin-bottom: 12px;
+    display: block;
 }
 
 
 /* Título */
 
 .contact-title {
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(46px, 5vw, 70px);
-  font-weight: 500;
-
-  line-height: .95;
-  letter-spacing: .01em;
-
-  color: var(--cream);
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(46px, 5vw, 70px);
+    font-weight: 500;
+    line-height: .95;
+    letter-spacing: .01em;
+    color: var(--cream);
 }
 
 
 /* Subtítulo */
 
 .contact-subtitle {
-  margin: 12px 0 34px;
-
-  font-family: var(--serif);
-  font-size: 16px;
-
-  color: var(--cream-muted);
+    margin: 12px 0 34px;
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--cream-muted);
 }
 
 
-/* =========================================
+/* =========================================================
    REDES
-   ========================================= */
+   ========================================================= */
 
 .social-links {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 30px;
-
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    justify-content: start;
+    gap: 28px;
+    width: auto;
 }
-
 
 .social-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  min-width: 70px;
-
-  text-decoration: none;
-
-  color: var(--cream);
+    width: 90px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-
 
 .social-icon {
-  width: 54px;
-  height: 54px;
-
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: var(--gold);
-
-  font-size: 22px;
-
-  transition: .3s ease;
+    width: 54px;
+    height: 54px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 22px;
+    transition: .3s ease;
 }
-
 
 .social-name {
-  margin-top: 10px;
-
-  font-family: var(--serif);
-  font-size: 15px;
-
-  color: var(--cream);
+    margin-top: 10px;
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--cream);
 }
-
 
 .social-detail {
-  margin-top: 3px;
-
-  font-family: var(--sans);
-  font-size: 10px;
-
-  color: var(--cream-muted);
-
-  white-space: nowrap;
+    margin-top: 3px;
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--cream-muted);
+    white-space: nowrap;
 }
-
 
 .social-item:hover .social-icon {
-  background: var(--gold);
-  color: var(--navy);
+    background: var(--gold);
+    color: var(--navy);
 }
 
 
-/* =========================================
+/* =========================================================
    BOTÓN
-   ========================================= */
+   ========================================================= */
 
 .contact-action {
-  margin-top: 38px;
+    margin-top: 38px;
 }
-
 
 .contact-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-
-  min-width: 255px;
-
-  padding: 15px 20px;
-
-  border: 1px solid var(--gold);
-
-  color: var(--gold-light);
-
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: .18em;
-
-  text-decoration: none;
-
-  transition: .3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 255px;
+    padding: 15px 20px;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-decoration: none;
+    transition: .3s ease;
 }
-
 
 .button-arrow {
-  margin-left: 20px;
-
-  font-size: 20px;
-  line-height: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: 1;
 }
-
 
 .contact-button:hover {
-  background: var(--gold);
-  color: var(--navy);
+    background: var(--gold);
+    color: var(--navy);
 }
 
 
-/* =========================================
-   COLUMNA 2
-   ORNAMENTO CENTRAL
-   ========================================= */
+/* =========================================================
+   COLUMNA DERECHA · FRASE
+   ========================================================= */
 
-.contact-decoration {
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contact-right {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+    box-sizing: border-box;
 }
 
 
-.contact-central-ornament {
-  width: 95px;
-  max-height: 330px;
+/* =========================================================
+   ORNAMENTOS
+   ========================================================= */
 
-  height: auto;
-
-  object-fit: contain;
-
-  display: block;
+.contact-right .contact-corner {
+    position: absolute;
+    width: 280px;
+    height: 220px;
+    background-image: url("images/esquina-exterior-derecha.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
 }
 
 
-/* =========================================
-   COLUMNA 3
+/* Ornamento superior derecho */
+
+.contact-right .contact-corner-right {
+    top: 0;
+    right: 0;
+}
+
+
+/* Ornamento inferior izquierdo */
+
+.contact-right .contact-corner-bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
    FRASE
-   ========================================= */
+   ========================================================= */
 
-.contact-quote {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  padding: 0 25px;
+.contact-right blockquote {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    max-width: 520px;
+    text-align: center;
+    font-family: var(--serif);
+    font-size: clamp(25px, 2.5vw, 38px);
+    line-height: 1.3;
+    font-style: italic;
+    color: var(--gold-light);
 }
 
 
-.contact-quote blockquote {
-  margin: 0;
-
-  max-width: 470px;
-
-  font-family: var(--serif);
-  font-size: clamp(27px, 2.7vw, 40px);
-
-  line-height: 1.3;
-
-  font-style: italic;
-
-  color: var(--gold-light);
-}
-
+/* =========================================================
+   PEQUEÑO ORNAMENTO DEBAJO DE LA FRASE
+   ========================================================= */
 
 .quote-ornament {
-  width: 150px;
-  height: auto;
-
-  margin-top: 30px;
-
-  display: block;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    margin-top: 28px;
 }
 
-
-/* =========================================
-   ORNAMENTOS DE ESQUINA
-   ========================================= */
-
-.contact-corner {
-  position: absolute;
-
-  width: 260px;
-  height: 190px;
-
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  pointer-events: none;
+.quote-ornament::before,
+.quote-ornament::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
 }
 
-
-.contact-corner-left {
-  top: 20px;
-  left: 25px;
-
-  background-image: url("images/esquina-exterior-izquierda.png");
+.quote-ornament span {
+    width: 6px;
+    height: 6px;
+    margin: 0 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
 }
 
-
-.contact-corner-right {
-  top: 20px;
-  right: 25px;
-
-  transform: scaleX(-1);
-
-  background-image: url("images/esquina-exterior-derecha.png");
-}
-
-
+  
 /* =========================================
    FOOTER
    ========================================= */
