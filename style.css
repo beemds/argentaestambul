@@ -1038,719 +1038,867 @@ h6 {
     text-decoration: none;
 }
 
-/* MÓVIL */
-@media (max-width: 700px) {
-    .site-footer {
+
+/* =========================================================
+   1. HASTA 1200px · ESCRITORIO COMPACTO
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    /* HERO */
+    .hero {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .hero-content {
+        max-width: 620px;
+    }
+
+    .hero h1 {
+        white-space: normal;
+    }
+
+    /* SECCIONES */
+    .vision-section,
+    .about,
+    .services,
+    .contact-section {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    /* CONTACTO */
+    .contact-grid {
+        gap: 40px;
+    }
+
+    .contact-right {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+
+/* =========================================================
+   2. HASTA 900px · TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    /* ---------- HEADER Y NAVEGACIÓN ---------- */
+
+    .site-header {
+        padding: 15px 5vw;
+    }
+
+    .brand img {
+        width: clamp(8rem, 24vw, 10rem);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 101;
+    }
+
+    /*
+       Menú compacto. Cerrado no ocupa la pantalla ni bloquea clics.
+       La clase .open debe seguir siendo controlada por el JavaScript.
+    */
+    .main-nav {
+        position: fixed;
+        top: 78px;
+        right: 18px;
+        bottom: auto;
+        left: auto;
+        z-index: 100;
+
         display: flex;
         flex-direction: column;
-        gap: 22px;
-        padding: 30px 20px;
+        align-items: stretch;
+        justify-content: center;
+        gap: 0;
+
+        width: min(280px, calc(100vw - 36px));
+        height: auto;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        padding: 14px 22px;
+
+        background: rgba(5, 17, 23, 0.97);
+        border: 1px solid rgba(201, 155, 85, 0.35);
+        font-size: 13px;
+
+        transform: translateY(-8px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .main-nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 13px 0;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 780px;
+        padding: 130px 7vw 80px;
+    }
+
+    .hero::before {
+        display: none;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 85vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(60px, 9vw, 88px);
+    }
+
+    .hero-photo {
+        inset: 27% -15% 0 12%;
+    }
+
+    .hero-photo::after {
+        width: 100%;
+        background:
+            linear-gradient(
+                180deg,
+                rgba(7, 24, 32, 0.55),
+                rgba(7, 24, 32, 0.08) 45%,
+                rgba(7, 24, 32, 0.65)
+            ),
+            linear-gradient(
+                90deg,
+                rgba(7, 24, 32, 0.85),
+                transparent 55%
+            );
+    }
+
+    /* ---------- SOBRE ARGENTA / VISIÓN ---------- */
+
+    .vision-section {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+
+    .vision-body {
+        grid-template-columns: 80px minmax(0, 1fr);
+        column-gap: 28px;
+    }
+
+    /* ---------- SOBRE MÍ ---------- */
+
+    .about {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 50px;
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .about-copy {
+        max-width: 700px;
+    }
+
+    .about-visual {
+        width: 100%;
+        max-width: 700px;
+        min-height: 500px;
+        margin: 0 auto;
+    }
+
+    /* ---------- CLASES ---------- */
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card:nth-child(2) {
+        border-right: 0;
+    }
+
+    .service-card:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+    }
+
+    /* ---------- CONTACTO ---------- */
+
+    .contact-section {
+        padding-top: 75px;
+        padding-bottom: 65px;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 55px;
+        min-height: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
         text-align: center;
     }
 
-    .footer-left,
-    .footer-brand,
-    .footer-right {
+    .contact-main {
         align-items: center;
+    }
+
+    .contact-title-ornament {
+        width: min(260px, 70vw);
+    }
+
+    .contact-subtitle {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .contact-right {
+        min-height: 350px;
+        padding: 55px 28px;
+    }
+
+    .contact-right .contact-corner {
+        width: 210px;
+        height: 165px;
+    }
+
+    .contact-right .contact-corner-right {
+        top: 0;
+        right: 0;
+    }
+
+    .contact-right .contact-corner-bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+
+    /* ---------- FOOTER · TABLET ---------- */
+
+    .site-footer {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 24px;
+        padding: 35px 6vw;
+    }
+
+    .footer-left {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+        gap: 16px;
+    }
+
+    .footer-brand span {
+        font-size: 14px;
+        letter-spacing: 0.1em;
+    }
+
+    .footer-brand small {
+        font-size: 8px;
+        letter-spacing: 0.16em;
+    }
+
+    .footer-istanbul {
+        grid-column: 2;
+        grid-row: 1;
+        width: min(320px, 100%);
+    }
+
+    .footer-right {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .footer-tagline {
+        max-width: 320px;
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .back-top {
+        flex-shrink: 0;
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   3. HASTA 700px · MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+    /* ---------- GENERAL ---------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* ---------- HEADER Y NAVEGACIÓN ---------- */
+
+    .site-header {
+        padding: 12px 18px;
+    }
+
+    .brand img {
+        width: 145px;
+        max-width: 48vw;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        padding: 6px;
+    }
+
+    .main-nav {
+        top: 66px;
+        right: 14px;
+        width: min(280px, calc(100vw - 28px));
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 760px;
+        padding: 115px 25px 65px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .eyebrow {
+        margin: 35px 0 20px;
+        font-size: 9px;
+        letter-spacing: 0.22em;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: clamp(48px, 12vw, 68px);
+        line-height: 0.88;
+    }
+
+    .hero-lead {
+        margin: 28px 0 25px;
+        font-size: clamp(27px, 7vw, 36px);
+        line-height: 1.08;
+    }
+
+    .hero-photo {
+        inset: 38% -25% 0 0;
+    }
+
+    /* ---------- SOBRE ARGENTA / VISIÓN ---------- */
+
+    .vision-section {
+        padding: 75px 25px 85px;
+    }
+
+    .vision-heading h2 {
+        font-size: clamp(36px, 9vw, 48px);
+    }
+
+    .vision-body {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 28px;
+        margin-top: 42px;
+    }
+
+    .vision-ornament {
+        margin-bottom: 10px;
+    }
+
+    .vision-ornament img {
+        width: 76px;
+        height: auto;
+    }
+
+    .vision-text {
+        text-align: center;
+    }
+
+    .vision-text p {
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    /* ---------- SOBRE MÍ ---------- */
+
+    .about {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+        padding: 75px 25px;
+    }
+
+    .about h2 {
+        font-size: clamp(38px, 10vw, 52px);
+    }
+
+    .about-copy {
+        width: 100%;
+    }
+
+    .about-visual {
+        width: 100%;
+        min-height: 420px;
+    }
+
+    .photo-frame {
+        width: clamp(125px, 29vw, 165px);
+        height: clamp(185px, 42vw, 230px);
+        padding-bottom: 30px;
+    }
+
+    .photo-one {
+        left: 0;
+    }
+
+    .photo-two {
+        left: 28%;
+        top: 105px;
+    }
+
+    .photo-three {
+        left: 52%;
+        top: 18px;
+    }
+
+    /* ---------- CLASES ---------- */
+
+    .services {
+        padding: 75px 25px 65px;
+    }
+
+    .classes-intro {
+        margin-bottom: 40px;
+    }
+
+    .classes-intro h2 {
+        font-size: clamp(34px, 9vw, 46px);
+        line-height: 1;
+    }
+
+    .classes-ornament {
+        width: min(250px, 80%);
+        margin: 20px auto 25px;
+    }
+
+    .service-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 30px 22px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .service-card:nth-child(2) {
+        border-right: 0;
+    }
+
+    .service-card:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .service-card:last-child {
+        border-bottom: 0;
+    }
+
+    /* ---------- CONTACTO ---------- */
+
+    .contact-section {
+        padding: 70px 25px 55px;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 55px;
+        padding: 15px 0;
+    }
+
+    .contact-title {
+        font-size: clamp(40px, 11vw, 52px);
+    }
+
+    .contact-title-ornament {
+        width: min(220px, 75vw);
+        margin-bottom: 10px;
+    }
+
+    .contact-subtitle {
+        max-width: 320px;
+        margin: 12px auto 28px;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .social-links {
+        grid-template-columns: repeat(2, minmax(70px, 1fr));
+        justify-content: center;
+        gap: 22px 18px;
+        width: min(100%, 280px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-item {
+        width: 100%;
+    }
+
+    .social-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 20px;
+    }
+
+    .social-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .social-name {
+        font-size: 13px;
+    }
+
+    .social-detail {
+        display: none;
+    }
+
+    .contact-action {
+        margin-top: 30px;
+    }
+
+    .contact-button {
+        min-width: 215px;
+        max-width: 100%;
+        padding: 14px 16px;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+    }
+
+    .contact-right {
+        min-height: 310px;
+        padding: 50px 15px;
+    }
+
+    .contact-right blockquote {
+        max-width: 320px;
+        font-size: clamp(26px, 7vw, 34px);
+        line-height: 1.2;
+    }
+
+    .contact-right .contact-corner {
+        width: 165px;
+        height: 130px;
+        opacity: 0.85;
+    }
+
+    .contact-right .contact-corner-right {
+        top: 0;
+        right: 0;
+    }
+
+    .contact-right .contact-corner-bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+
+    /* ---------- FOOTER · MÓVIL ---------- */
+
+    .site-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 32px 22px;
+        text-align: center;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .footer-brand span {
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-align: center;
+    }
+
+    .footer-brand small {
+        font-size: 8px;
+        letter-spacing: 0.16em;
+        text-align: center;
+    }
+
+    .footer-left p {
+        font-size: 10px;
         text-align: center;
     }
 
     .footer-istanbul {
-        width: min(320px, 85%);
+        display: block;
+        width: min(300px, 90%);
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
     }
 
     .footer-tagline {
         max-width: 280px;
+        font-size: 24px;
+        line-height: 1.15;
         text-align: center;
+    }
+
+    .back-top {
+        margin: 0 auto;
     }
 }
 
 
-
 /* =========================================================
-   11. RESPONSIVE · HASTA 1200px
-   ========================================================= */
-
-@media (max-width: 1200px) {
-
-  .hero {
-    padding-left: 6vw;
-    padding-right: 6vw;
-  }
-
-  .hero-content {
-    max-width: 620px;
-  }
-
-  .hero h1 {
-    white-space: normal;
-  }
-
-  .vision-section,
-  .about,
-  .services,
-  .contact-section {
-    padding-left: 6vw;
-    padding-right: 6vw;
-  }
-
-  .contact-grid {
-    gap: 40px;
-  }
-
-  .contact-right {
-    padding-left: 35px;
-    padding-right: 35px;
-  }
-}
-
-
-/* =========================================================
-   12. RESPONSIVE · HASTA 900px
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  /* ---------- HEADER ---------- */
-
-  .site-header {
-    padding: 15px 5vw;
-  }
-
-  .brand img {
-    width: clamp(8rem, 24vw, 10rem);
-  }
-
-  .menu-toggle {
-    display: block;
-    position: relative;
-    z-index: 101;
-  }
-
-  .main-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: 100vh;
-
-    gap: 30px;
-
-    background: rgba(5, 17, 23, .98);
-
-    font-size: 13px;
-
-    transform: translateX(100%);
-    transition: transform .3s ease;
-  }
-
-  .main-nav.open {
-    transform: translateX(0);
-  }
-
-
-  /* ---------- HERO ---------- */
-
-  .hero {
-    min-height: 900px;
-    padding: 150px 7vw 90px;
-  }
-
-  /* Evita el bloque azul sobre la foto */
-  .hero::before {
-    display: none;
-  }
-
-  .hero-content {
-    width: 100%;
-    max-width: 85vw;
-  }
-
-  .hero h1 {
-    font-size: clamp(60px, 12vw, 100px);
-  }
-
-  .hero-photo {
-    inset: 27% -15% 0 12%;
-  }
-
-  .hero-photo::after {
-    width: 100%;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(7, 24, 32, .55),
-        rgba(7, 24, 32, .08) 45%,
-        rgba(7, 24, 32, .65)
-      ),
-      linear-gradient(
-        90deg,
-        rgba(7, 24, 32, .85),
-        transparent 55%
-      );
-  }
-
-
-  /* ---------- VISIÓN ---------- */
-
-  .vision-section {
-    padding-top: 100px;
-    padding-bottom: 110px;
-  }
-
-  .vision-body {
-    grid-template-columns: 90px minmax(0, 1fr);
-    column-gap: 35px;
-  }
-
-
-  /* ---------- SOBRE MÍ ---------- */
-
-  .about {
-    grid-template-columns: 1fr;
-    gap: 60px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-
-  .about-copy {
-    max-width: 700px;
-  }
-
-  .about-visual {
-    width: 100%;
-    max-width: 700px;
-    min-height: 540px;
-    margin: 0 auto;
-  }
-
-
-  /* ---------- SERVICIOS ---------- */
-
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .service-card:nth-child(2) {
-    border-right: 0;
-  }
-
-  .service-card:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
-
-  /* ---------- CONTACTO ---------- */
-
-  .contact-section {
-    padding-top: 85px;
-    padding-bottom: 70px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 70px;
-
-    min-height: auto;
-
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-    text-align: center;
-  }
-
-  .contact-main {
-    align-items: center;
-  }
-
-  .contact-title-ornament {
-    width: min(260px, 70vw);
-  }
-
-  .contact-subtitle {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .contact-right {
-    min-height: 380px;
-    padding: 60px 30px;
-  }
-
-  .contact-right .contact-corner {
-    width: 220px;
-    height: 175px;
-  }
-
-  .contact-right .contact-corner-right {
-    top: 0;
-    right: 0;
-  }
-
-  .contact-right .contact-corner-bottom-left {
-    bottom: 0;
-    left: 0;
-  }
-
-
-  /* ---------- FOOTER ---------- */
-
-  .site-footer {
-    grid-template-columns: 1fr auto;
-    padding: 45px 7vw;
-  }
-
-  .site-footer p {
-    grid-column: 1 / -1;
-  }
-}
-
-
-/* =========================================================
-   13. RESPONSIVE · HASTA 700px
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  /* ---------- GENERAL ---------- */
-
-  body {
-    overflow-x: hidden;
-  }
-
-
-  /* ---------- HEADER ---------- */
-
-  .site-header {
-    padding: 12px 18px;
-  }
-
-  .brand img {
-    width: 145px;
-    max-width: 48vw;
-  }
-
-  .menu-toggle {
-    width: 40px;
-    padding: 6px;
-  }
-
-
-  /* ---------- HERO ---------- */
-
-  .hero {
-    min-height: 820px;
-    padding: 125px 25px 70px;
-    align-items: flex-start;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .eyebrow {
-    margin: 45px 0 22px;
-    font-size: 9px;
-    letter-spacing: .22em;
-  }
-
-  .hero h1 {
-    max-width: 100%;
-    font-size: clamp(48px, 14vw, 68px);
-    line-height: .84;
-  }
-
-  .hero-lead {
-    margin: 35px 0 30px;
-    font-size: 21px;
-    line-height: 1.2;
-  }
-
-  .hero-photo {
-    inset: 35% -25% 0 0;
-  }
-
-
-  /* ---------- VISIÓN ---------- */
-
-  .vision-section {
-    padding: 90px 25px 100px;
-  }
-
-
-  .vision-body {
-    grid-template-columns: 1fr;
-    margin-top: 55px;
-  }
-
-  .vision-ornament {
-    margin-bottom: 35px;
-  }
-
-  .vision-ornament img {
-    width: 80px;
-  }
-
-  .vision-text {
-    text-align: center;
-  }
-
-  .vision-text p {
-    font-size: 18px;
-  }
-
-
-  /* ---------- SOBRE MÍ ---------- */
-
-  .about {
-    padding: 90px 25px;
-  }
-
-  .about h2 {
-    font-size: clamp(42px, 11vw, 55px);
-  }
-
-  .about-visual {
-    min-height: 450px;
-  }
-
-  .photo-frame {
-    width: 170px;
-    height: 240px;
-    padding-bottom: 35px;
-  }
-
-  .photo-one {
-    left: 0;
-  }
-
-  .photo-two {
-    left: 28%;
-    top: 120px;
-  }
-
-  .photo-three {
-    left: 52%;
-    top: 20px;
-  }
-
-
-  /* ---------- SERVICIOS ---------- */
-
-  .services {
-    padding: 85px 25px 75px;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .service-card:last-child {
-    border-bottom: 0;
-  }
-
-
-  /* ---------- CONTACTO ---------- */
-
-  .contact-section {
-    padding: 80px 25px 65px;
-  }
-
-  .contact-grid {
-    gap: 85px;
-    padding: 20px 0;
-  }
-
-  .contact-title {
-    font-size: clamp(42px, 12vw, 55px);
-  }
-
-  .contact-title-ornament {
-    width: min(220px, 75vw);
-    margin-bottom: 10px;
-  }
-
-  .contact-subtitle {
-    max-width: 320px;
-    margin: 12px auto 30px;
-    font-size: 15px;
-    line-height: 1.4;
-  }
-
-  .social-links {
-    grid-template-columns: repeat(4, minmax(55px, 1fr));
-    gap: 16px;
-    width: min(100%, 360px);
-  }
-
-  .social-item {
-    width: 100%;
-  }
-
-  .social-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 20px;
-  }
-
-  .social-name {
-    font-size: 14px;
-  }
-
-  .social-detail {
-    display: none;
-  }
-
-  .contact-action {
-    margin-top: 35px;
-  }
-
-  .contact-button {
-    min-width: 230px;
-    max-width: 100%;
-    padding: 14px 17px;
-
-    font-size: 10px;
-    letter-spacing: .13em;
-  }
-
-  .contact-right {
-    min-height: 330px;
-    padding: 60px 15px;
-  }
-
-  .contact-right blockquote {
-    max-width: 320px;
-    font-size: clamp(24px, 7vw, 31px);
-    line-height: 1.25;
-  }
-
-  .contact-right .contact-corner {
-    width: 170px;
-    height: 135px;
-    opacity: .85;
-  }
-
-  .contact-right .contact-corner-right {
-    top: 0;
-    right: 0;
-  }
-
-  .contact-right .contact-corner-bottom-left {
-    bottom: 0;
-    left: 0;
-  }
-
-
-  /* ---------- FOOTER ---------- */
-
-  .site-footer {
-    padding: 40px 25px;
-  }
-
-  .footer-brand span {
-    font-size: 13px;
-    letter-spacing: .16em;
-  }
-
-  .footer-brand small {
-    font-size: 8px;
-    letter-spacing: .22em;
-  }
-
-  .site-footer p {
-    font-size: 9px;
-  }
-
-  .back-top {
-    width: 38px;
-    height: 38px;
-  }
-}
-
-
-/* =========================================================
-   14. RESPONSIVE · HASTA 400px
+   4. HASTA 400px · MÓVIL PEQUEÑO
    ========================================================= */
 
 @media (max-width: 400px) {
+    /* ---------- HEADER Y NAVEGACIÓN ---------- */
 
-  /* ---------- HEADER ---------- */
+    .site-header {
+        padding: 10px 14px;
+    }
 
-  .site-header {
-    padding: 10px 14px;
-  }
+    .brand img {
+        width: 125px;
+        max-width: 48vw;
+    }
 
-  .brand img {
-    width: 125px;
-  }
+    .main-nav {
+        top: 58px;
+        right: 10px;
+        width: min(270px, calc(100vw - 20px));
+        padding: 12px 18px;
+    }
 
+    /* ---------- HERO ---------- */
 
-  /* ---------- HERO ---------- */
+    .hero {
+        min-height: 700px;
+        padding: 105px 18px 55px;
+    }
 
-  .hero {
-    min-height: 760px;
-    padding: 115px 18px 60px;
-  }
+    .hero h1 {
+        font-size: 47px;
+    }
 
-  .hero h1 {
-    font-size: 47px;
-  }
+    .hero-lead {
+        font-size: 27px;
+    }
 
-  .hero-lead {
-    font-size: 19px;
-  }
+    .hero-photo {
+        inset: 40% -30% 0 0;
+    }
 
-  .hero-photo {
-    inset: 37% -30% 0 0;
-  }
+    /* ---------- SOBRE ARGENTA / VISIÓN ---------- */
 
+    .vision-section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-  /* ---------- VISIÓN ---------- */
+    .vision-heading h2 {
+        font-size: 34px;
+    }
 
-  .vision-section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+    .vision-body {
+        margin-top: 35px;
+    }
 
-  .vision-heading h2 {
-    font-size: 36px;
-  }
+    .vision-text p {
+        font-size: 16px;
+    }
 
+    /* ---------- SOBRE MÍ ---------- */
 
-  /* ---------- SOBRE MÍ ---------- */
+    .about {
+        padding-left: 18px;
+        padding-right: 18px;
+        gap: 28px;
+    }
 
-  .about {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+    .about h2 {
+        font-size: 39px;
+    }
 
-  .about h2 {
-    font-size: 42px;
-  }
+    .about-visual {
+        min-height: 360px;
+    }
 
-  .about-visual {
-    min-height: 380px;
-  }
+    .photo-frame {
+        width: 125px;
+        height: 185px;
+        padding-bottom: 25px;
+    }
 
-  .photo-frame {
-    width: 135px;
-    height: 195px;
-  }
+    .photo-one {
+        left: -4px;
+    }
 
-  .photo-one {
-    left: -5px;
-  }
+    .photo-two {
+        left: 27%;
+        top: 88px;
+    }
 
-  .photo-two {
-    left: 27%;
-    top: 95px;
-  }
+    .photo-three {
+        left: 51%;
+        top: 12px;
+    }
 
-  .photo-three {
-    left: 51%;
-  }
+    /* ---------- CLASES ---------- */
 
+    .services {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-  /* ---------- SERVICIOS ---------- */
+    .classes-intro h2 {
+        font-size: 32px;
+    }
 
-  .services {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+    .service-card {
+        padding: 27px 16px;
+    }
 
+    /* ---------- CONTACTO ---------- */
 
-  /* ---------- CONTACTO ---------- */
+    .contact-section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-  .contact-section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+    .contact-grid {
+        gap: 45px;
+    }
 
-  .contact-grid {
-    gap: 75px;
-  }
+    .contact-title {
+        font-size: 39px;
+    }
 
-  .contact-title {
-    font-size: 40px;
-  }
+    .contact-title-ornament {
+        width: min(200px, 78vw);
+    }
 
-  .contact-title-ornament {
-    width: min(200px, 78vw);
-  }
+    .social-links {
+        grid-template-columns: repeat(2, 82px);
+        width: 100%;
+        max-width: 246px;
+        justify-content: center;
+        gap: 20px 18px;
+    }
 
-  .social-links {
-    width: 100%;
-    max-width: 280px;
+    .social-item {
+        width: 82px;
+    }
 
-    grid-template-columns: repeat(2, 82px);
-    justify-content: center;
-    gap: 22px 20px;
-  }
+    .social-icon {
+        width: 54px;
+        height: 54px;
+    }
 
-  .social-item {
-    width: 82px;
-  }
+    .social-name {
+        font-size: 12px;
+    }
 
-  .social-name {
-    font-size: 13px;
-  }
+    .contact-button {
+        min-width: 205px;
+        font-size: 9px;
+    }
 
-  .contact-button {
-    min-width: 215px;
-    font-size: 9px;
-  }
+    .contact-right {
+        min-height: 285px;
+        padding: 45px 10px;
+    }
 
-  .contact-right {
-    min-height: 300px;
-    padding: 50px 10px;
-  }
+    .contact-right blockquote {
+        max-width: 270px;
+        font-size: 25px;
+    }
 
-  .contact-right blockquote {
-    max-width: 280px;
-    font-size: 24px;
-  }
+    .contact-right .contact-corner {
+        width: 140px;
+        height: 110px;
+    }
 
-  .contact-right .contact-corner {
-    width: 145px;
-    height: 115px;
-  }
+    /* ---------- FOOTER · MÓVIL PEQUEÑO ---------- */
 
+    .site-footer {
+        padding: 28px 18px;
+        gap: 18px;
+    }
 
-  /* ---------- FOOTER ---------- */
+    .footer-brand span {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+    }
 
-  .site-footer {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 40px 18px;
-    text-align: center;
-  }
+    .footer-brand small {
+        font-size: 7px;
+        letter-spacing: 0.12em;
+    }
 
-  .footer-brand {
-    align-items: center;
-  }
+    .footer-istanbul {
+        width: min(280px, 95%);
+    }
 
-  .site-footer p {
-    grid-column: auto;
-  }
-
-  .back-top {
-    justify-self: center;
-  }
+    .footer-tagline {
+        max-width: 250px;
+        font-size: 23px;
+    }
 }
