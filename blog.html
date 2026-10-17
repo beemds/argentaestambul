@@ -13,9 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Reutiliza el CSS general del landing -->
   <link rel="stylesheet" href="style.css">
-  <!-- Estilos específicos de la página del blog -->
   <link rel="stylesheet" href="blog.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -25,7 +23,6 @@
     <div class="custom-scrollbar-thumb"></div>
   </div>
 
-  <!-- HEADER: misma estructura y clases que el landing -->
   <header class="site-header">
     <a class="brand" href="index.html#inicio" aria-label="Una Argenta en Estambul, inicio">
       <img src="images/logo-horizontal.png" alt="Una Argenta en Estambul">
@@ -65,7 +62,10 @@
       </div>
 
       <div class="journal-cover-art">
-        <img src="images/blog-mate.jpg" alt="Mate argentino tradicional con bombilla y yerba">
+        <img
+          src="articulos/imagenes/mate argenta en estambul.png"
+          alt="Mate argentino tradicional con bombilla y yerba"
+        >
         <div class="journal-image-caption">
           <span>01 / CULTURA ARGENTINA</span>
           <span>Una costumbre, muchas historias</span>
@@ -79,31 +79,24 @@
       </div>
     </section>
 
-    <!-- PRESENTACIÓN BREVE, CON FORMATO DE NOTA EDITORIAL -->
-    <section class="journal-note" aria-labelledby="intro-title">
-      <div class="journal-note-label">
-        <span class="journal-note-number">01</span>
-        <span>UNA NOTA DE APERTURA</span>
-      </div>
-      <div class="journal-note-body">
-        <h2 id="intro-title">Las culturas viven en las cosas pequeñas.</h2>
-        <div class="journal-note-columns">
-          <p>
-            En una palabra que no se traduce fácilmente, en una bebida que se comparte,
-            en una leyenda que pasa de una generación a otra.
-          </p>
-          <p>
-            Este cuaderno reúne historias de Argentina y curiosidades vistas desde
-            Estambul. Para leer sin apuro, descubrir algo nuevo y mirar lo cotidiano
-            desde otra perspectiva.
-          </p>
-        </div>
-      </div>
-      <div class="journal-note-aside" aria-hidden="true">
-        <span>ARG</span>
-        <span class="journal-aside-star">✳</span>
-        <span>IST</span>
-      </div>
+   <section class="journal-note journal-note-intro">
+  <div class="journal-note-body">
+    <p class="eyebrow">UN CUADERNO ENTRE DOS MUNDOS</p>
+
+    <h2>
+      Hay historias que empiezan con un mate.
+      <em>Otras, con una calle de Estambul.</em>
+    </h2>
+
+    <p class="journal-note-text">
+      Costumbres, lugares y encuentros que merecen ser contados.
+    </p>
+
+    <a href="#articulos" class="journal-note-link">
+      EXPLORÁ LAS HISTORIAS <span aria-hidden="true">↓</span>
+    </a>
+  </div>
+
     </section>
 
     <!-- ARTÍCULOS -->
@@ -118,51 +111,74 @@
         </p>
       </div>
 
-      <article class="featured-article">
-        <a class="featured-article-image" href="blog/mate-argentino.html" aria-label="Leer el artículo sobre el mate argentino">
-          <img src="images/blog-mate.jpg" alt="Mate argentino, bombilla y yerba mate sobre una mesa">
-          <span class="article-image-label">PRÓXIMAMENTE</span>
-        </a>
-        <div class="featured-article-copy">
-          <p class="article-category">CULTURA ARGENTINA · TRADICIONES</p>
-          <h3><a href="blog/mate-argentino.html">El mate argentino: historia, leyenda y una tradición que viajó por el mundo</a></h3>
-          <p>
-            ¿Qué es el mate, de dónde viene y cómo llegó a otras partes del mundo?
-            Un recorrido por su historia, las leyendas que lo acompañan y su presencia
-            más allá de Argentina.
-          </p>
-          <a class="text-link" href="blog/mate-argentino.html">Descubrí la historia <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-
       <div class="blog-card-grid">
-        <article class="blog-card blog-card-placeholder">
-          <div class="blog-card-symbol" aria-hidden="true">01</div>
-          <p class="article-category">ARGENTINA</p>
-          <h3>Palabras, costumbres y formas de hablar</h3>
-          <p>Una mirada a las expresiones y los pequeños detalles que forman parte de la vida cotidiana.</p>
-          <span class="coming-soon">En preparación</span>
-        </article>
 
-        <article class="blog-card blog-card-placeholder">
-          <div class="blog-card-symbol" aria-hidden="true">02</div>
-          <p class="article-category">ESTAMBUL</p>
-          <h3>Rincones e historias de la ciudad</h3>
-          <p>Lugares, leyendas y curiosidades para mirar Estambul con otros ojos.</p>
-          <span class="coming-soon">En preparación</span>
-        </article>
+  <!-- ARTÍCULO 1: MATE -->
+  <a class="blog-card blog-card-article"
+     href="articulos/que-es-el-mate-argentino.html"
+     aria-label="Leer el artículo sobre el mate argentino">
 
-        <article class="blog-card blog-card-placeholder">
-          <div class="blog-card-symbol" aria-hidden="true">03</div>
-          <p class="article-category">ENTRE CULTURAS</p>
-          <h3>Costumbres que cuentan quiénes somos</h3>
-          <p>Historias sobre identidad, encuentros y maneras distintas de vivir lo cotidiano.</p>
-          <span class="coming-soon">En preparación</span>
-        </article>
+    <img
+      class="blog-card-image"
+      src="articulos/imagenes/mate argenta en estambul.png"
+      alt="Mate argentino con bombilla y yerba mate"
+    >
+
+    <div class="blog-card-content">
+      <p class="article-category">CULTURA ARGENTINA</p>
+      <h3>Una costumbre, muchas historias</h3>
+      <p>Descubrí qué representa el mate y cómo se comparte esta costumbre.</p>
+      <span class="article-card-link">
+        DESCUBRÍ LA HISTORIA <span aria-hidden="true">↗</span>
+      </span>
+    </div>
+  </a>
+
+
+  <!-- ARTÍCULO 2: ESTAMBUL -->
+  <article class="blog-card blog-card-placeholder">
+    <img
+      class="blog-card-image"
+      src="articulos/imagenes/rincones-estambul.png"
+      alt="Rincón de Estambul"
+    >
+
+    <div class="blog-card-content">
+      <div class="blog-card-symbol" aria-hidden="true"></div>
+      <p class="article-category">ESTAMBUL</p>
+      <h3>Rincones e historias de la ciudad</h3>
+      <p>Lugares, leyendas y curiosidades para mirar Estambul con otros ojos.</p>
+      <span class="coming-soon">En preparación</span>
+    </div>
+
+  </article>
+
+
+  <!-- ARTÍCULO 3: ENTRE CULTURAS -->
+  <article class="blog-card blog-card-placeholder">
+
+    <img
+      class="blog-card-image"
+      src="articulos/imagenes/entre-culturas.png"
+      alt="Encuentro entre culturas"
+    >
+
+    <div class="blog-card-content">
+      <div class="blog-card-symbol" aria-hidden="true"></div>
+      <p class="article-category">ENTRE CULTURAS</p>
+      <h3>Costumbres que cuentan quiénes somos</h3>
+      <p>Historias sobre identidad, encuentros y maneras distintas de vivir lo cotidiano.</p>
+      <span class="coming-soon">En preparación</span>
+    </div>
+
+  </article>
+
+</div>
+      </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA FINAL -->
     <section class="blog-cta" aria-labelledby="blog-cta-title">
       <p class="eyebrow">SEGUIMOS EN CONTACTO</p>
       <h2 id="blog-cta-title">¿Te interesa la cultura <em>argentina?</em></h2>
@@ -173,7 +189,6 @@
     </section>
   </main>
 
-  <!-- FOOTER: misma estructura y clases que el landing -->
   <footer class="site-footer">
     <div class="footer-left">
       <div class="footer-brand">
@@ -198,9 +213,10 @@
 
   <script src="script.js"></script>
   <script>
-    // Año automático, por si script.js no lo incluye.
     const yearElement = document.getElementById("year");
     if (yearElement) yearElement.textContent = new Date().getFullYear();
   </script>
+
+
 </body>
 </html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Infografías y recursos visuales para aprender español con explicaciones en español y turco. Una biblioteca de Una Argenta en Estambul.">
+  <meta name="theme-color" content="#071820">
+  <title>Recursos de español | Una Argenta en Estambul</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="p:domain_verify" content="7eb9ddc503fcd4ea589ee521f699458e"/>
+
+  <style>
+    /* Estilos exclusivos de la página de recursos.
+       La paleta y las fuentes se heredan de style.css. */
+    .resources-page {
+      min-height: 70vh;
+      padding: 155px 7vw 100px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,155,85,.09), transparent 55%),
+        var(--navy);
+    }
+
+    .resources-wrap {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .resources-heading {
+      max-width: 780px;
+      margin: 0 auto 58px;
+      text-align: center;
+    }
+
+    .resources-heading .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .resources-heading h1 {
+      margin: 0 0 20px;
+      color: var(--cream);
+      font: 500 clamp(42px, 6vw, 72px)/.98 var(--serif);
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+
+    .resources-heading h1 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .resources-intro {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--cream-muted);
+      font: 400 19px/1.6 var(--serif);
+    }
+
+    .resources-language {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 27px;
+      padding: 10px 15px;
+      border: 1px solid rgba(201,155,85,.4);
+      color: var(--gold-light);
+      font: 500 10px var(--sans);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(201,155,85,.35);
+      background: linear-gradient(155deg, rgba(16,43,53,.88), rgba(7,24,32,.98));
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-light);
+      box-shadow: 0 18px 40px rgba(0,0,0,.2);
+    }
+
+    .resource-image {
+      position: relative;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(201,155,85,.10), transparent 45%),
+        var(--navy-2);
+      border-bottom: 1px solid rgba(201,155,85,.25);
+    }
+
+    .resource-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    /* Se muestra mientras no se haya añadido la imagen definitiva. */
+    .resource-placeholder {
+      padding: 28px;
+      color: var(--gold-light);
+      text-align: center;
+    }
+
+    .resource-placeholder i {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 34px;
+    }
+
+    .resource-placeholder span {
+      display: block;
+      font: 500 10px/1.8 var(--sans);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .resource-copy {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px 24px 27px;
+    }
+
+    .resource-level {
+      margin-bottom: 12px;
+      color: var(--gold-light);
+      font: 500 9px var(--sans);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .resource-copy h2 {
+      margin: 0 0 12px;
+      font-size: clamp(25px, 2.5vw, 32px);
+      line-height: 1;
+      text-transform: none;
+    }
+
+    .resource-copy p {
+      margin: 0 0 24px;
+      color: var(--cream-muted);
+      font: 400 16px/1.5 var(--serif);
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--gold);
+      color: var(--gold-light);
+      font: 500 10px var(--sans);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .resource-link:hover {
+      color: var(--cream);
+    }
+
+    .resources-note {
+      max-width: 760px;
+      margin: 60px auto 0;
+      padding: 28px 30px;
+      border-top: 1px solid rgba(201,155,85,.4);
+      border-bottom: 1px solid rgba(201,155,85,.4);
+      color: var(--cream-muted);
+      text-align: center;
+      font: 400 18px/1.6 var(--serif);
+    }
+
+    .resources-note strong {
+      color: var(--cream);
+      font-weight: 600;
+    }
+
+
+
+    .resource-shortcuts {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      width:min(1120px,100%);
+      margin:38px auto 0;
+    }
+    .resource-shortcut {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      min-height:88px;
+      padding:20px 22px;
+      border:1px solid rgba(201,155,85,.35);
+      background:linear-gradient(155deg,rgba(16,43,53,.88),rgba(7,24,32,.98));
+      color:var(--cream);
+      text-decoration:none;
+      transition:border-color .2s ease,transform .2s ease;
+    }
+    .resource-shortcut:hover { border-color:var(--gold-light); transform:translateY(-3px); }
+    .resource-shortcut > i { flex:0 0 auto; color:var(--gold-light); font-size:25px; }
+    .resource-shortcut span { display:flex; flex-direction:column; gap:6px; }
+    .resource-shortcut strong { font:500 14px/1.25 var(--sans); }
+    .resource-shortcut small { color:var(--cream-muted); font:400 10px/1.4 var(--sans); letter-spacing:.08em; text-transform:uppercase; }
+    .resource-carousel { overflow-x:auto !important; }
+    .resource-item { flex:0 0 calc((100% - 88px) / 5); min-width:150px; }
+    .resource-preview { width:100%; }
+    @media(max-width:900px) {
+      .resource-shortcuts { grid-template-columns:1fr; gap:12px; }
+      .resource-shortcut { min-height:74px; }
+      .resource-item { flex-basis:calc((100% - 44px) / 3); }
+    }
+    @media(max-width:600px) {
+      .resource-item { flex-basis:72vw; }
+      .resource-shortcuts { margin-top:28px; }
+    }
+
+    .resources-intro-note { margin-top:18px !important; font-size:16px !important; }
+    .resource-section { margin-top:76px; scroll-margin-top:110px; }
+    .resource-section-heading { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid rgba(201,155,85,.35); }
+    .resource-section-heading h2 { margin:0; color:var(--cream); font:500 clamp(29px,3.5vw,43px)/1.05 var(--serif); }
+    .resource-section-heading > p { max-width:390px; margin:0; color:var(--cream-muted); font:400 16px/1.5 var(--serif); }
+    .section-kicker { margin:0 0 10px; color:var(--gold-light); font:500 9px var(--sans); letter-spacing:.18em; text-transform:uppercase; }
+    .resource-carousel-shell { display:flex; align-items:center; gap:14px; min-width:0; }
+    .resource-carousel { display:flex !important; flex:1 1 auto; gap:22px; min-width:0; overflow-x:auto !important; overflow-y:hidden; padding:8px 2px 20px; scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:var(--gold) rgba(201,155,85,.12); }
+    .resource-carousel::-webkit-scrollbar { height:6px; }
+    .resource-carousel::-webkit-scrollbar-track { background:rgba(201,155,85,.12); }
+    .resource-carousel::-webkit-scrollbar-thumb { background:var(--gold); }
+    .resource-item { flex:0 0 225px; min-width:0; scroll-snap-align:start; }
+    .resource-preview { display:grid; width:100%; aspect-ratio:4/5; place-items:center; padding:0; overflow:hidden; border:1px solid rgba(201,155,85,.38); background:var(--navy-2); cursor:zoom-in; }
+    .resource-preview img { display:block; width:100%; height:100%; object-fit:contain; padding:10px; }
+    .resource-preview .resource-placeholder { display:grid; width:100%; height:100%; align-content:center; justify-items:center; gap:18px; padding:24px; background:radial-gradient(ellipse at 50% 35%,rgba(201,155,85,.13),transparent 60%),linear-gradient(155deg,rgba(16,43,53,.88),rgba(7,24,32,.98)); color:var(--gold-light); text-align:center; }
+    .resource-preview .resource-placeholder i { font-size:34px; }
+    .resource-preview .resource-placeholder span { font:500 10px/1.8 var(--sans); letter-spacing:.16em; text-transform:uppercase; }
+    .resource-item h3 { margin:14px 0 7px; color:var(--cream); font:500 23px/1.1 var(--serif); }
+    .resource-item .resource-level { margin:0; color:var(--gold-light); font:500 9px/1.5 var(--sans); letter-spacing:.13em; text-transform:uppercase; }
+    .carousel-arrow { flex:0 0 38px; width:38px; height:38px; display:grid; place-items:center; border:1px solid rgba(201,155,85,.55); border-radius:50%; color:var(--gold-light); background:rgba(7,24,32,.95); cursor:pointer; }
+    .carousel-arrow:hover { background:var(--gold); color:var(--navy); }
+    .resource-lightbox[hidden] { display:none; }
+    .resource-lightbox { position:fixed; z-index:2000; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:55px 24px 25px; background:rgba(2,9,13,.94); backdrop-filter:blur(8px); }
+    .lightbox-content { display:grid; place-items:center; width:100%; height:100%; min-height:0; }
+    .lightbox-content img { display:block; max-width:min(100%,900px); max-height:100%; width:auto; height:auto; object-fit:contain; border:1px solid rgba(201,155,85,.45); }
+    .lightbox-content .resource-placeholder { display:grid; place-items:center; gap:18px; width:min(88vw,560px); aspect-ratio:4/5; border:1px solid rgba(201,155,85,.45); background:var(--navy-2); color:var(--gold-light); text-align:center; }
+    .lightbox-close { position:absolute; top:12px; right:20px; width:44px; height:44px; border:1px solid rgba(201,155,85,.55); background:transparent; color:var(--cream); font:300 34px/1 var(--sans); cursor:pointer; }
+    .lightbox-caption { margin:0; color:var(--cream); font:500 20px/1.2 var(--serif); }
+    body.lightbox-open { overflow:hidden; }
+    @media(max-width:700px) {
+      .resource-section { margin-top:56px; }
+      .resource-section-heading { display:block; }
+      .resource-section-heading > p { margin-top:12px; }
+      .resource-carousel { gap:15px; }
+      .resource-item { flex-basis:72vw; }
+      .carousel-arrow { flex-basis:30px; width:30px; height:30px; }
+    }
+
+    @media (max-width: 900px) {
+      .resources-page { padding: 130px 6vw 80px; }
+      .resources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .resources-heading { margin-bottom: 42px; }
+    }
+
+    @media (max-width: 600px) {
+      .resources-page { padding: 115px 22px 65px; }
+      .resources-heading h1 { font-size: clamp(38px, 11vw, 54px); }
+      .resources-intro { font-size: 17px; }
+      .resources-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      .resource-card { max-width: 430px; width: 100%; margin: 0 auto; }
+      .resource-image { aspect-ratio: 4 / 4.5; }
+      .resource-copy { padding: 23px 22px 25px; }
+      .resources-note { margin-top: 42px; padding: 23px 8px; font-size: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="custom-scrollbar">
+    <div class="custom-scrollbar-thumb"></div>
+  </div>
+
+  <!-- Encabezado compartido con la landing -->
+  <header class="site-header">
+    <a class="brand" href="index.html#inicio" aria-label="Una Argenta en Estambul, inicio">
+      <img src="images/logo-horizontal.png" alt="Una Argenta en Estambul">
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#sobre-mi">Sobre mí</a>
+      <a href="index.html#clases">Clases</a>
+      <a href="index.html#blog">Blog</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="resources-page" aria-labelledby="resources-title">
+      <div class="resources-wrap">
+        <header class="resources-heading">
+          <p class="eyebrow">UNA ARGENTA EN ESTAMBUL · RECURSOS</p>
+          <h1 id="resources-title">El español,<br><em>paso a paso.</em></h1>
+          <p class="resources-intro">
+            Materiales visuales para aprender español de una manera clara y práctica.
+            Recursos bilingües español–turco para estudiar, repasar y consultar cuando los necesites.
+          </p>
+          <span class="resources-language">Español · Türkçe</span>
+          <p class="resources-intro resources-intro-note">
+            Esta biblioteca irá creciendo con nuevos recursos para acompañarte en tu aprendizaje del español.
+          </p>
+        </header>
+
+        <nav class="resource-shortcuts" aria-label="Ir a una categoría de recursos">
+          <a class="resource-shortcut" href="#frases">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span><strong>Frases de uso cotidiano</strong><small>Comunicación cotidiana</small></span>
+          </a>
+          <a class="resource-shortcut" href="#estructuras">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            <span><strong>Estructuras gramaticales</strong><small>Gramática paso a paso</small></span>
+          </a>
+          <a class="resource-shortcut" href="#elementos">
+            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i>
+            <span><strong>Elementos gramaticales</strong><small>Palabras y expresiones</small></span>
+          </a>
+        </nav>
+
+
+
+        <section class="resource-section" id="frases" aria-labelledby="frases-title">
+          <div class="resource-section-heading">
+            <div><p class="section-kicker">01 · Español práctico</p><h2 id="frases-title">Frases de uso cotidiano</h2></div>
+            <p>Expresiones para comunicarte en situaciones reales, dentro y fuera del aula.</p>
+          </div>
+          <div class="resource-carousel-shell">
+            <button class="carousel-arrow carousel-prev" type="button" aria-label="Ver infografías anteriores"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="resource-carousel" aria-label="Infografías de frases de uso cotidiano" tabindex="0">
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Frases para clase" aria-label="Ampliar Frases para clase">
+                  <span class="resource-placeholder"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Frases para clase</h3><p class="resource-level">Español práctico · A1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Saludos y presentaciones" aria-label="Ampliar Saludos y presentaciones">
+                  <span class="resource-placeholder"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Saludos y presentaciones</h3><p class="resource-level">Español práctico · A1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="En un café o restaurante" aria-label="Ampliar En un café o restaurante">
+                  <span class="resource-placeholder"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>En un café o restaurante</h3><p class="resource-level">Español práctico · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Pedir ayuda" aria-label="Ampliar Pedir ayuda">
+                  <span class="resource-placeholder"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Pedir ayuda</h3><p class="resource-level">Español práctico · A1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="En tiendas y mercados" aria-label="Ampliar En tiendas y mercados">
+                  <span class="resource-placeholder"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>En tiendas y mercados</h3><p class="resource-level">Español práctico · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Hablar de gustos" aria-label="Ampliar Hablar de gustos">
+                  <span class="resource-placeholder"><i class="fa-solid fa-heart" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Hablar de gustos</h3><p class="resource-level">Español práctico · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Pedir indicaciones" aria-label="Ampliar Pedir indicaciones">
+                  <span class="resource-placeholder"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Pedir indicaciones</h3><p class="resource-level">Español práctico · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="En el transporte" aria-label="Ampliar En el transporte">
+                  <span class="resource-placeholder"><i class="fa-solid fa-bus" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>En el transporte</h3><p class="resource-level">Español práctico · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Hacer planes" aria-label="Ampliar Hacer planes">
+                  <span class="resource-placeholder"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Hacer planes</h3><p class="resource-level">Español práctico · A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Conversaciones cotidianas" aria-label="Ampliar Conversaciones cotidianas">
+                  <span class="resource-placeholder"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Conversaciones cotidianas</h3><p class="resource-level">Español práctico · A2</p>
+              </article>
+            </div>
+        </section>
+
+        <section class="resource-section" id="estructuras" aria-labelledby="estructuras-title">
+          <div class="resource-section-heading">
+            <div><p class="section-kicker">02 · Gramática visual</p><h2 id="estructuras-title">Estructuras gramaticales</h2></div>
+            <p>Guías visuales para comprender cómo se construye el español y cómo usar sus estructuras.</p>
+          </div>
+          <div class="resource-carousel-shell">
+            <button class="carousel-arrow carousel-prev" type="button" aria-label="Ver infografías anteriores"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="resource-carousel" aria-label="Infografías de estructuras gramaticales" tabindex="0">
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Ser y estar" aria-label="Ampliar Ser y estar">
+                  <span class="resource-placeholder"><i class="fa-solid fa-language" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Ser y estar</h3><p class="resource-level">Gramática visual · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Los tiempos verbales" aria-label="Ampliar Los tiempos verbales">
+                  <span class="resource-placeholder"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Los tiempos verbales</h3><p class="resource-level">Gramática visual · A1–B2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Orden de la frase" aria-label="Ampliar Orden de la frase">
+                  <span class="resource-placeholder"><i class="fa-solid fa-align-left" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Orden de la frase</h3><p class="resource-level">Gramática visual · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="El presente" aria-label="Ampliar El presente">
+                  <span class="resource-placeholder"><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>El presente</h3><p class="resource-level">Gramática visual · A1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="El pasado" aria-label="Ampliar El pasado">
+                  <span class="resource-placeholder"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>El pasado</h3><p class="resource-level">Gramática visual · A2–B1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="El futuro" aria-label="Ampliar El futuro">
+                  <span class="resource-placeholder"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>El futuro</h3><p class="resource-level">Gramática visual · A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Verbos reflexivos" aria-label="Ampliar Verbos reflexivos">
+                  <span class="resource-placeholder"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Verbos reflexivos</h3><p class="resource-level">Gramática visual · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Estar + gerundio" aria-label="Ampliar Estar + gerundio">
+                  <span class="resource-placeholder"><i class="fa-solid fa-person-running" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Estar + gerundio</h3><p class="resource-level">Gramática visual · A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Ir a + infinitivo" aria-label="Ampliar Ir a + infinitivo">
+                  <span class="resource-placeholder"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Ir a + infinitivo</h3><p class="resource-level">Gramática visual · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="El subjuntivo" aria-label="Ampliar El subjuntivo">
+                  <span class="resource-placeholder"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>El subjuntivo</h3><p class="resource-level">Gramática visual · B1–B2</p>
+              </article>
+            </div>
+        </section>
+
+        <section class="resource-section" id="elementos" aria-labelledby="elementos-title">
+          <div class="resource-section-heading">
+            <div><p class="section-kicker">03 · Detalles que importan</p><h2 id="elementos-title">Elementos gramaticales</h2></div>
+            <p>Pequeñas piezas del idioma que ayudan a expresarte con más precisión.</p>
+          </div>
+          <div class="resource-carousel-shell">
+            <button class="carousel-arrow carousel-prev" type="button" aria-label="Ver infografías anteriores"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="resource-carousel" aria-label="Infografías de elementos gramaticales" tabindex="0">
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Por y para" aria-label="Ampliar Por y para">
+                  <span class="resource-placeholder"><i class="fa-solid fa-spell-check" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Por y para</h3><p class="resource-level">Elementos gramaticales · A2–B1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Preposiciones frecuentes" aria-label="Ampliar Preposiciones frecuentes">
+                  <span class="resource-placeholder"><i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Preposiciones frecuentes</h3><p class="resource-level">Elementos gramaticales · A1–B1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Conectores" aria-label="Ampliar Conectores">
+                  <span class="resource-placeholder"><i class="fa-solid fa-link" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Conectores</h3><p class="resource-level">Elementos gramaticales · A2–B2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Artículos" aria-label="Ampliar Artículos">
+                  <span class="resource-placeholder"><i class="fa-solid fa-font" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Artículos</h3><p class="resource-level">Elementos gramaticales · A1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Género y número" aria-label="Ampliar Género y número">
+                  <span class="resource-placeholder"><i class="fa-solid fa-venus-mars" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Género y número</h3><p class="resource-level">Elementos gramaticales · A1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Pronombres" aria-label="Ampliar Pronombres">
+                  <span class="resource-placeholder"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Pronombres</h3><p class="resource-level">Elementos gramaticales · A1–B1</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Ser, estar y hay" aria-label="Ampliar Ser, estar y hay">
+                  <span class="resource-placeholder"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Ser, estar y hay</h3><p class="resource-level">Elementos gramaticales · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Muy y mucho" aria-label="Ampliar Muy y mucho">
+                  <span class="resource-placeholder"><i class="fa-solid fa-plus" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Muy y mucho</h3><p class="resource-level">Elementos gramaticales · A1–A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Comparativos" aria-label="Ampliar Comparativos">
+                  <span class="resource-placeholder"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Comparativos</h3><p class="resource-level">Elementos gramaticales · A2</p>
+              </article>
+              <article class="resource-item">
+                <button class="resource-preview" type="button" data-title="Falsos amigos" aria-label="Ampliar Falsos amigos">
+                  <span class="resource-placeholder"><i class="fa-solid fa-language" aria-hidden="true"></i><span>Infografía<br>Español · Türkçe</span></span>
+                </button>
+                <h3>Falsos amigos</h3><p class="resource-level">Vocabulario · A2–B1</p>
+              </article>
+            </div>
+        </section>
+
+        <div class="resource-lightbox" id="resource-lightbox" role="dialog" aria-modal="true" aria-label="Infografía ampliada" hidden>
+          <button class="lightbox-close" type="button" aria-label="Cerrar imagen">&times;</button>
+          <div class="lightbox-content"></div><p class="lightbox-caption"></p>
+        </div>
+
+        <p class="resources-note"><strong>Un idioma también es una forma de mirar el mundo.</strong></p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página compartido con la landing -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <div class="footer-brand">
+        <span>UNA ARGENTA EN ESTAMBUL</span><br>
+        <small>ESPAÑOL · CULTURA · HISTORIAS</small>
+      </div>
+      <p>© <span id="year"></span></p>
+    </div>
+
+    <img
+      src="images/estambul-footer.png"
+      alt=""
+      class="footer-istanbul"
+      aria-hidden="true"
+    >
+
+    <div class="footer-right">
+      <h5 class="footer-tagline">Estambul a través de una mirada argentina.</h5>
+      <a href="index.html#inicio" class="back-top" aria-label="Volver al inicio">↑</a>
+    </div>
+  </footer>
+
+
+  <script>
+    (() => {
+      document.querySelectorAll('.resource-carousel-shell').forEach((shell) => {
+        const carousel = shell.querySelector('.resource-carousel');
+        const prev = shell.querySelector('.carousel-prev');
+        const next = shell.querySelector('.carousel-next');
+        if (!carousel || !prev || !next) return;
+        const scrollAmount = () => {
+          const card = carousel.querySelector('.resource-item');
+          return card ? card.getBoundingClientRect().width + 22 : carousel.clientWidth * 0.8;
+        };
+        prev.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+        next.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+      });
+
+      const lightbox = document.getElementById('resource-lightbox');
+      if (!lightbox) return;
+      const content = lightbox.querySelector('.lightbox-content');
+      const caption = lightbox.querySelector('.lightbox-caption');
+      const close = lightbox.querySelector('.lightbox-close');
+      let trigger = null;
+      function closeViewer() {
+        lightbox.hidden = true;
+        content.replaceChildren();
+        document.body.classList.remove('lightbox-open');
+        if (trigger) trigger.focus();
+      }
+      document.querySelectorAll('.resource-preview').forEach((button) => {
+        button.addEventListener('click', () => {
+          trigger = button;
+          const img = button.querySelector('img');
+          if (img) {
+            const big = document.createElement('img');
+            big.src = img.currentSrc || img.src;
+            big.alt = img.alt || button.dataset.title || 'Infografía';
+            content.appendChild(big);
+          } else {
+            const placeholder = button.querySelector('.resource-placeholder');
+            if (placeholder) content.appendChild(placeholder.cloneNode(true));
+          }
+          caption.textContent = button.dataset.title || 'Infografía';
+          lightbox.hidden = false;
+          document.body.classList.add('lightbox-open');
+          close.focus();
+        });
+      });
+      close.addEventListener('click', closeViewer);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeViewer(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lightbox.hidden) closeViewer(); });
+    })();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

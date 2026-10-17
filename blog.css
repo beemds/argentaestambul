@@ -354,6 +354,58 @@
 .featured-article .text-link {
   margin-top: 5px;
 }
+/* INTRODUCCIÓN DEL BLOG */
+
+.journal-note-intro {
+  display: block;
+  padding: 75px 7vw 85px;
+  border-top: 1px solid rgba(201, 155, 85, .18);
+  border-bottom: 1px solid rgba(201, 155, 85, .18);
+}
+
+.journal-note-intro .journal-note-body {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.journal-note-intro h2 {
+  max-width: 900px;
+  margin: 22px 0;
+  font: 400 clamp(36px, 5vw, 66px)/1.08 var(--serif);
+  color: var(--cream);
+}
+
+.journal-note-intro h2 em {
+  color: var(--gold);
+}
+
+.journal-note-intro .journal-note-text {
+  margin: 25px 0;
+  color: var(--cream-muted);
+  font: 400 19px/1.5 var(--serif);
+}
+
+.journal-note-intro .journal-note-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  color: var(--gold);
+  font: 500 10px/1.5 var(--sans);
+  letter-spacing: .15em;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .journal-note-intro {
+    padding: 55px 6vw 65px;
+  }
+
+  .journal-note-intro h2 {
+    font-size: 38px;
+  }
+}
+
 
 .blog-card-grid {
   display: grid;
@@ -403,31 +455,336 @@
   letter-spacing: .16em;
   text-transform: uppercase;
 }
+/* CORREGIR EL ESPACIO ENTRE IMAGEN Y TEXTO */
 
-/* CTA final */
+.blog-card-grid .blog-card-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Imagen */
+.blog-card-grid .blog-card-placeholder .blog-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+
+  margin: 0;
+}
+
+/* Contenido debajo de la imagen */
+.blog-card-grid .blog-card-placeholder .blog-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  flex: 1;
+  padding: 28px;
+  margin: 0;
+  gap: 14px;
+}
+
+/* Evitar que los títulos y textos tengan márgenes extra */
+.blog-card-grid .blog-card-placeholder h3,
+.blog-card-grid .blog-card-placeholder p {
+  margin-top: 0;
+}
+
+/* Mantener "En preparación" al final de cada tarjeta */
+.blog-card-grid .blog-card-placeholder .coming-soon {
+  margin-top: auto;
+  padding-top: 25px;
+}/* CORREGIR EL ESPACIO ENTRE IMAGEN Y TEXTO */
+
+.blog-card-grid .blog-card-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Imagen */
+.blog-card-grid .blog-card-placeholder .blog-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+
+  margin: 0;
+}
+
+/* Contenido debajo de la imagen */
+.blog-card-grid .blog-card-placeholder .blog-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  flex: 1;
+  padding: 28px;
+  margin: 0;
+  gap: 14px;
+}
+
+/* Evitar que los títulos y textos tengan márgenes extra */
+.blog-card-grid .blog-card-placeholder h3,
+.blog-card-grid .blog-card-placeholder p {
+  margin-top: 0;
+}
+
+/* Mantener "En preparación" al final de cada tarjeta */
+.blog-card-grid .blog-card-placeholder .coming-soon {
+  margin-top: auto;
+  padding-top: 25px;
+}
+/* CTA FINAL: SEGUIMOS EN CONTACTO */
+
 .blog-cta {
-  padding: 85px 7vw 100px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 75px 7vw 85px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   text-align: center;
+
   background:
-    radial-gradient(ellipse at center, rgba(16, 43, 53, .75), transparent 68%),
+    radial-gradient(
+      ellipse at center,
+      rgba(16, 43, 53, .75),
+      transparent 68%
+    ),
     var(--navy-2);
+
   border-top: 1px solid rgba(201, 155, 85, .14);
 }
 
-.blog-cta h2 {
-  max-width: 850px;
+/* Etiqueta superior */
+.blog-cta > .eyebrow {
+  width: 100%;
+  margin: 0 0 18px;
+  text-align: center;
 }
 
+/* Título */
+.blog-cta h2 {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  text-align: center;
+  line-height: 1.05;
+}
+
+/* Texto debajo del título */
 .blog-cta > p:not(.eyebrow) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+
   margin: 24px auto 30px;
+  padding: 0;
+
   color: var(--cream-muted);
   font: 400 19px/1.5 var(--serif);
+
+  text-align: center;
 }
 
+/* Botón */
 .blog-cta .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 18px;
+
+  align-self: center;
+  margin: 0 auto;
 }
 
+
+/* ========================================
+   GRID DE ARTÍCULOS DEL BLOG
+======================================== */
+
+.blog-listing {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px 7vw 100px;
+  box-sizing: border-box;
+}
+
+.blog-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Tarjetas individuales */
+
+.blog-card-grid .blog-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background: var(--navy-2, #071820);
+  border: 1px solid rgba(201, 155, 85, .25);
+  color: var(--cream, #e9dfcc);
+
+  text-decoration: none;
+}
+
+/* Imagen del artículo del mate */
+
+.blog-card-grid .blog-card-article {
+  display: flex;
+  flex-direction: column;
+  background: var(--navy-2, #071820);
+}
+
+.blog-card-grid .blog-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Contenido de las tarjetas */
+
+.blog-card-grid .blog-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 28px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.blog-card-grid .article-category {
+  margin: 0;
+  color: var(--gold, #c99b55);
+  font: 500 10px/1.5 var(--sans, "Montserrat", sans-serif);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.blog-card-grid h3 {
+  margin: 0;
+  color: var(--cream, #e9dfcc);
+  font: 500 28px/1.15 var(--serif, "Cormorant Garamond", serif);
+}
+
+.blog-card-grid .blog-card-content > p:not(.article-category) {
+  margin: 0;
+  color: var(--cream-muted, #b9b0a2);
+  font: 400 16px/1.6 var(--serif, "Cormorant Garamond", serif);
+}
+
+.blog-card-grid .article-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: var(--gold, #c99b55);
+  font: 500 10px/1.5 var(--sans, "Montserrat", sans-serif);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* Tarjetas de artículos próximos */
+
+.blog-card-grid .blog-card-placeholder {
+  padding: 32px;
+  gap: 18px;
+  background: var(--navy-2, #071820);
+}
+
+.blog-card-grid .blog-card-symbol {
+  color: var(--gold, #c99b55);
+  font: 400 28px/1 var(--serif, "Cormorant Garamond", serif);
+}
+
+.blog-card-grid .coming-soon {
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: var(--gold, #c99b55);
+  font: 500 10px/1.5 var(--sans, "Montserrat", sans-serif);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* Efecto sutil al pasar el cursor */
+
+.blog-card-grid .blog-card-article:hover {
+  border-color: rgba(201, 155, 85, .65);
+}
+
+.blog-card-grid .blog-card-article:hover .blog-card-image {
+  transform: scale(1.02);
+}
+
+.blog-card-grid .blog-card-image {
+  transition: transform .5s ease;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .blog-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-listing {
+    padding: 50px 6vw 70px;
+  }
+
+  .blog-card-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .blog-card-grid .blog-card-content,
+  .blog-card-grid .blog-card-placeholder {
+    padding: 24px;
+  }
+
+  .blog-card-grid h3 {
+    font-size: 25px;
+  }
+}
 /* Tablet */
 @media (max-width: 900px) {
   .journal-masthead {
